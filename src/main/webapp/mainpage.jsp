@@ -7,63 +7,49 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="joda" uri="http://www.joda.org/joda/time/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
-    <title></title>
+    <title>Test Page</title>
+    <%@include file="/WEB-INF/include/header_inc.jsp" %>
 </head>
 <body>
-<div>
-    <form action="/addEmployee" method="post">
-        <table>
-            <tr>
-                <td>First Name :</td>
-                <td><input type="text" id="firstName" name="firstName"/></td>
-            </tr>
-            <tr>
-                <td>Last Name :</td>
-                <td><input type="text" id="lastName" name="lastName"/></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" id="addButton" value="Add Employee"/></td>
-            </tr>
-        </table>
-    </form>
+<%@include file="/WEB-INF/include/header.jsp" %>
+<%@include file="/WEB-INF/include/slider.jsp" %>
+
+<div class="container block">
+    <div class="row">
+        <div class="col s12 l4 hoverable">
+            <div class="center promo promo-example">
+                <i class="material-icons large">flash_on</i>
+                <p class="promo-caption"><strong>Speeds up development</strong></p>
+                <p class="light center">We did most of the heavy lifting for you to provide a default stylings that
+                    incorporate our custom components.</p>
+            </div>
+        </div>
+        <div class="col s12 l4 hoverable">
+            <div class="center promo promo-example">
+                <i class="material-icons large">group</i>
+                <p class="promo-caption"><strong>User Experience Focused</strong></p>
+                <p class="light center">By utilizing elements and principles of Material Design, we were able to create
+                    a framework that focuses on User Experience.</p>
+            </div>
+        </div>
+        <div class="col s12 l4 hoverable">
+            <div class="center promo promo-example">
+                <i class="material-icons large">settings</i>
+                <p class="promo-caption"><strong>Easy to work with</strong></p>
+                <p class="light center">We have provided detailed documentation as well as specific code examples to
+                    help new users get started.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<hr>
+<img class="materialboxed" width="100%" src="http://lorempixel.com/580/250/nature/5">
 
-<div class="list_employee">
-    <table>
-        <c:forEach items="${employeeList}" var="each">
-            <tr>
-                <td>First Name</td>
-                <td>${each.firstName}</td>
-                <td>Last Name</td>
-                <td>${each.lastName}</td>
-            </tr>
-        </c:forEach>
-    </table>
-</div>
-<form action="/gcs/images/" method="post" enctype="multipart/form-data">
-    <input type="file" name="image"/>
-    <input type="submit" value="submit">
-</form>
-
-<div class="form-group col-sm-10 col-sm-offset-2">
-    <img src="${imageUrl}"
-         onerror="this.src='https://storage.cloud.google.com/water-q-canada.appspot.com/default.jpeg'">
-</div>
-
-<hr>
-
-<form action="/email/send/" method="post">
-    Send email to <input type="text" name="receiverUsername"/> whose email address is <input type="text" name="receiverAddress"/> <br>
-    Title of the email is <input type="text" name="title"/> and the content is <input type="text" name="content"/>
-    <input type="submit" value="submit"/>
-</form>
-
-<div id="message">${message}</div>
+<%@include file="/WEB-INF/include/footer.jsp" %>
 
 </body>
 </html>

@@ -55,6 +55,12 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time-jsptags -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time-jsptags</artifactId>
+            <version>LATEST</version>
+        </dependency>
 
         <!-- Test Dependencies -->
         <dependency>
